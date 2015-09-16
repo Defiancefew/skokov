@@ -45,7 +45,7 @@ gulp.task("wiredep", function(){
 
 // BROWSERSYNC
 
-gulp.task("browsersync", ["jade"], function() {
+gulp.task("browsersync", ["jade", "sass"], function() {
     browserSync.init({
         server: "src",
         notify: false,
@@ -72,15 +72,15 @@ gulp.task("sass", function () {
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass({
     includePaths: require("node-bourbon").includePaths
-  }).on("error", plugins.sass.logError))
-  .pipe(plugins.rename({suffix: ".min"}))
-  .pipe(plugins.autoprefixer({
-    browsers: ["last 15 versions"],
-    cascade: false
-  }))
-  .pipe(plugins.sourcemaps.write())
-  .pipe(gulp.dest("src/css"))
-  .pipe(browserSync.reload({stream: true}));
+  	}).on("error", plugins.sass.logError))
+	  .pipe(plugins.rename({suffix: ".min"}))
+	  .pipe(plugins.autoprefixer({
+	    browsers: ["last 15 versions"],
+	    cascade: false
+	  }))
+	  .pipe(plugins.sourcemaps.write())
+	  .pipe(gulp.dest("src/css"))
+	  .pipe(browserSync.reload({stream: true}));
 });
 
 // SPRITESMITH
@@ -106,7 +106,9 @@ gulp.task("rename", function(){
   .pipe(plugins.rename("sprites.scss"))
   .pipe(gulp.dest("src/sass/vendor"));
 });
+
 // WATCH
+
 gulp.task("watch", function(){
   gulp.watch("src/**/*.jade", ["jade"]);
   gulp.watch("bower.json", ["wiredep"]);

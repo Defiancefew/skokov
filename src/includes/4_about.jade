@@ -1,11 +1,43 @@
+mixin about(number)
+	div(class= "about__team-tile--" + number)
+		a(href="#").about__team-link
+
+mixin clients(name)
+	div(class= "about__clients-tile--" + name)
+		a(href="#").about__team-link
+
 section.about
-	h2.about__heading about us
-	p.about__subtext SKOKOV is one of the world's leading management consulting firms. We care for our clients' business as our own, they know we're in this together
-	.what
-		h2.what__heading
-		.what__red
-		p.what__text
-	.clients
-		h2.clients__heading
-	.team
-		h2.team__heading
+	.about__wrapper
+		h2.about__heading about us
+		p.about__subtext SKOKOV is one of the world's leading management consulting firms. We care for our clients' business as our own, they know we're in this together
+		.about__wrapper
+			.about__what
+				h2.about__red-heading What we do
+				.about__red
+				p.about__text When someone asks what we do SKOKOV, it’s tempting to point out our four-decade track record for helping to transform the world’s great companies into sharper, smarter, better versions of themselves. It’s true, our mission is to help management teams create such high levels of economic value that together we redefine our respective industries.We work with top executives to help them make better decisions, convert those decisions to actions, and deliver the sustainable success they desire. For forty years, we've been passionate about achieving better results for our clients-results that go beyond financial and are uniquely tailored, pragmatic, holistic, and enduring.We advise global leaders on their most critical issues and opportunities: strategy, marketing, organization, operations, technology, transformations and mergers & acquisitions, across all industries and geographies. Our unique approach to traditional change management, called Results Delivery®, helps clients measure and manage risk and overcome the odds to realize results.
+			.about__clients
+				h2.about__red-heading our clients
+				.about__red
+				.about__clients-tiles
+					+clients("oracle")
+					+clients("sony")
+					+clients("sandisk")
+					+clients("mcafee")
+					+clients("netflix")
+					+clients("sap")
+		.about__team
+			h2.about__red-heading our team
+			.about__red
+			.about__team-tiles
+				+about(1)
+				+about(2)
+				+about(3)
+				+about(4)
+				+about(5)
+				+about(6)
+				+about(7)
+				+about(8)
+				+about(9)
+				+about(10)
+				+about(11)
+				+about(12)

@@ -26,12 +26,46 @@ $font: "Verdana", sans-serif
 	height: 3px
 	background-color: #fe504f
 
+%heading
+	color: #343434
+	font-family: $font
+	font-size: 24px
+	font-weight: 700
+	line-height: 28px
+	text-transform: uppercase
+
+%subtext
+	color: #adadad
+	font-family: $font
+	font-size: 16px
+	font-weight: 400
+	line-height: 24px
+
+%red-heading
+	color: #fe504f
+	font-family: $font
+	font-size: 20px
+	font-weight: 700
+	line-height: 74px
+	text-transform: uppercase
+
 
 .header
-	min-height: 895px
+	height: 100vh	
 	background-image: url("../img/header_bg.jpg")
 	background-size: cover
 	position: relative
+	padding-top: 70px
+	z-index: 0
+	// &:before
+	// 	content: ""
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	right: 0
+	// 	bottom: 0
+	// 	background-color: rgba(0,0,0,0.8)
+	// 	z-index: 0
 	&__wrapper
 		@extend %wrapper
 	&__topline
@@ -39,8 +73,13 @@ $font: "Verdana", sans-serif
 		+clearfix
 	&__logo
 		float: left
+		display: inline-block
+		vertical-align: middle
 	&__nav
 		float: right
+		display: inline-block
+		vertical-align: middle
+		margin-bottom: 180px
 	li
 		float: left
 		margin-right: 50px
@@ -58,25 +97,29 @@ $font: "Verdana", sans-serif
 			border-bottom: 2px solid red
 	&__jumbotron
 		display: block
+		width: 60%
 	&__heading
 		color: white
 		font-family: $font
 		font-size: 60px
 		font-weight: 700
 		line-height: 74px
+		margin-bottom: 45px
 	&__subtext
 		color: white
 		font-family: $font
 		font-size: 20px
 		font-weight: 400
 		line-height: 28px
+		margin-bottom: 45px
 	&__start
 		@extend %button
+		margin-right: 30px
 	&__learn
 		@extend %button
 		background-color: #343434
 	&__profit
-		@extend .icon-header_profit
+		+s(header_profit)
 		color: white
 		font-family: $font
 		font-size: 12px
@@ -85,45 +128,53 @@ $font: "Verdana", sans-serif
 		padding-right: 10px
 		position: absolute
 		right: 0
-		top: 30%
-	&__chart
-		background-size: cover
-		background-image: url("../img/header_chart.png")
-		width: 100%
-		min-height: 895px
-		position: absolute
-		bottom: 0
-		left: 0
-		right: 0
-		z-index: -1
+		top: 37%
+		background-color: transparent
 
 
 .service
-	&__header
-		color: #343434
-		font-family: $font
-		font-size: 24px
-		font-weight: 700
-		line-height: 28px
-		text-transform: uppercase
+	min-height: 725px
+	&__wrapper
+		@extend %wrapper
+	&__heading
+		@extend %heading
+		text-align: center
+		margin-top: 50px
 	&__subtext
-		color: #adadad
-		font-family: $font
-		font-size: 16px
-		font-weight: 400
-		line-height: 24px
+		margin-top: 35px
+		@extend %subtext
+		text-align: center
+		max-width: 80%
+		margin: 35px auto 0 auto
+	&__tiles
+		margin-top: 70px
+		+clearfix
 
 .tile
+	max-width: 25%
+	min-height: 250px
+	display: block
+	float: left
+	text-align: center
+	padding: 0 2%
 	&__icon
-
+		@each $s in perfomance,customer,technology,potential,strategy,equity,digital,results
+			&--#{$s}
+				+s($s)
+				text-align: center
+				margin-bottom: 20px
+	margin-bottom: 20px
 	&__heading
 		color: #343434
+		width: 70%
+		margin: 0 auto
 		font-family: $font
 		font-size: 16px
 		font-weight: 700
 		line-height: 24px
 	&__red
 		@extend %red
+		margin: 10px auto 20px auto
 	&__text
 		color: #aeaeae
 		font-family: $font
@@ -132,15 +183,328 @@ $font: "Verdana", sans-serif
 		line-height: 24px
 
 
+.contact
+	background-image: url("../img/contacts_bg.jpg")
+	background-size: cover
+	min-height: 400px
+	position: relative
+	z-index: -1
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,0.8)
+		z-index: -1
+	&__wrapper
+		+ca
+		width: 80%
+	&__heading
+		color: white
+		font-family: $font
+		font-size: 34px
+		font-weight: 700
+		line-height: 58px
+		text-transform: uppercase
+		text-align: center
+		margin-bottom: 40px
+	&__button
+		@extend %button
+		margin: 0 auto
+		display: block
+
+
+.about
+	padding-top: 80px
+	padding-bottom: 80px
+	+clearfix
+	&__wrapper
+		@extend %wrapper
+	&__heading
+		@extend %heading
+		text-align: center
+	&__subtext
+		@extend %subtext
+		max-width: 60%
+		text-align: center
+		margin: 35px auto 0 auto
+	&__red-heading
+		@extend %red-heading
+	&__red
+		@extend %red
+		margin-bottom: 30px
+	&__text
+		color: #343434
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+	&__wrapper
+		+clearfix
+	&__team-link
+		display: block
+		width: 100%
+		height: 100%
+		&:hover
+			background-color: red
+			opacity: 0.5
+	&__what
+		float: left
+		width: 50%
+		padding-right: 60px
+	&__clients
+		float: right
+		width: 50%
+	&__clients-tile
+		@each $s in oracle,sony,sandisk,mcafee,netflix,sap
+			&--#{$s}
+				+s($s)
+			position: relative
+	&__team
+		width: 100%
+		display: block
+	@each $s in 1,2,3,4,5,6,7,8,9,10,11,12
+		&__team-tile--#{$s}
+			+s(team_#{$s})
+			float: left
+			position: relative
+
+			
+.blend
+	min-height: 400px
+	background-image: url("../img/blend_bg.jpg")
+	background-size: cover
+	position: relative
+	z-index: -1
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,0.8)
+		z-index: -1
+	&__wrapper
+		z-index: 1
+		+ca
+		width: 80%
+	&__play
+		width: 92px
+		display: block
+		margin: 0 auto
+		height: 92px
+		background-color: #fe504f
+		border-radius: 50%
+		position: relative
+		margin-bottom: 25px
+		i
+			@extend .icon-play
+			display: inline-block
+			+ca
+	&__heading
+		color: white
+		font-family: $font
+		font-size: 34px
+		font-weight: 700
+		line-height: 58px
+		text-transform: uppercase
+		text-align: center
+	&__subtext
+		color: white
+		font-family: $font
+		font-size: 16px
+		font-weight: 400
+		line-height: 24px
+		text-align: center
+
+
+.news
+	min-height: 930px
+	padding-top: 80px
+	&__wrapper
+		@extend %wrapper
+		+clearfix
+	&__heading
+		@extend %heading
+		text-align: center
+	&__subtext
+		@extend %subtext
+		text-align: center
+		max-width: 60%
+		margin: 35px auto 80px auto
+	&__text-tile
+		background-color: #343434
+		padding: 30px
+		display: block
+		position: relative
+		max-width: 25%
+		float: left
+		height: 300px
+	&__text-heading
+		@extend %red-heading
+		line-height: 1.2
+	&__text-red
+		@extend %red
+		margin: 15px 0 15px 0
+	&__text
+		color: white
+		font-family: Verdana
+		font-size: 12px
+		font-weight: 400
+		line-height: 20px
+	&__text-date
+		color: #fe504f
+		font-family: $font
+		font-size: 12px
+		font-style: italic
+		line-height: 20px
+		position: absolute
+		bottom: 25px
+		right: 25px
+	&__tile-image
+		&--big
+			max-width: 50%
+			float: left
+			height: 300px
+		&--small
+			max-width: 25%
+			float: left
+			height: 300px
+
+
+.form
+	background: url("../img/contacts2_bg.jpg")
+	min-height: 715px
+	position: relative
+	z-index: -1
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,0.8)
+		z-index: -1
+	&__wrapper
+		@extend %wrapper
+		padding-top: 100px
+	&__subscribe
+		float: left
+		width: 50%
+	.subscribe__heading
+		color: #fe504f
+		font-family: $font
+		font-size: 32px
+		font-weight: 700
+		line-height: 32px
+		text-transform: uppercase
+		margin-bottom: 40px
+	.subscribe__icon
+		@each $s in map,phone,mail
+			&--#{$s}
+				+s($s)
+				vertical-align: middle
+				margin-right: 15px
+				margin-bottom: 15px
+	.subscribe__tile
+		color: white
+		font-family: $font
+		font-size: 12px
+		font-weight: 700
+		line-height: 20px
+		text-transform: uppercase
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		top: -7px
+	.subscribe__red
+		@extend %red
+		margin-bottom: 40px
+	&__heading
+		@extend .subscribe__heading
+		margin-bottom: 15px
+	&__red
+		@extend %red
+		margin-bottom: 20px
+	&__text
+		margin-bottom: 40px
+		color: white
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		line-height: 20px
+	&__form
+		float: right
+		position: relative
+	input
+		width: 445px
+		height: 45px
+		text-indent: 15px
+		padding-right: 15px
+		border: 1px solid #aeaeae
+		background: transparent
+		display: block
+		color: #afafaf
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		margin-bottom: 15px
+		+placeholder
+			color: #afafaf
+			font-family: $font
+			font-size: 14px
+			font-weight: 400
+	textarea
+		width: 445px
+		height: 190px
+		border: 1px solid #aeaeae
+		background: transparent
+		color: #afafaf
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		text-indent: 15px
+		padding-top: 10px
+	&__submit
+		@extend %button
+		line-height: 40px
+		display: block
+		position: absolute
+		right: 0
+		margin-top: 20px
+
+
 .footer
 	min-height: 100px
 	background-color: #343434
 	&__wrapper
 		@extend %wrapper
+		padding-top: 40px
 	&__copyright
 		color: white
-		font-family: Verdana
+		font-family: $font
 		font-size: 12px
 		font-weight: 700
 		line-height: 20px
 		text-transform: uppercase
+		float: left
+.footer__social
+	float: right
+	a
+		display: block
+		float: left
+		height: 20px
+		margin-right: 15px
+		padding-right: 15px
+		border-right: 1px solid red
+		&:last-child
+			border-right: 1px solid transparent
+	.social__icon
+			@each $s in linkedin,facebook,twitter,youtube
+				&--#{$s}
+					+s($s)
+					vertical-align: middle
