@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "authors": [
+    "Defiancefew"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "bourbon": "~4.2.4"
+  }
+}

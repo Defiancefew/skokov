@@ -1,0 +1,146 @@
+@import "vendor/reset"
+@import "vendor/mixins"
+@import "vendor/default"
+@import "vendor/sprites"
+@import "vendor/bootstrap"
+@import "../lib/bourbon/app/assets/stylesheets/bourbon"
+
+$font: "Verdana", sans-serif
+
+%wrapper
+	max-width: 1200px
+	margin: 0 auto
+
+%button
+	padding: 0 40px
+	border-radius: 50px
+	background-color: #fe504f
+	color: white
+	font-family: $font
+	font-size: 20px
+	font-weight: normal
+	line-height: 60px
+
+%red
+	width: 61px
+	height: 3px
+	background-color: #fe504f
+
+
+.header
+	min-height: 895px
+	background-image: url("../img/header_bg.jpg")
+	background-size: cover
+	position: relative
+	&__wrapper
+		@extend %wrapper
+	&__topline
+		display: block
+		+clearfix
+	&__logo
+		float: left
+	&__nav
+		float: right
+	li
+		float: left
+		margin-right: 50px
+	&__nav-link
+		text-decoration: none
+		color: white
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		line-height: 32px
+		text-transform: uppercase
+		display: block
+		border-bottom: 2px solid transparent
+		&:hover
+			border-bottom: 2px solid red
+	&__jumbotron
+		display: block
+	&__heading
+		color: white
+		font-family: $font
+		font-size: 60px
+		font-weight: 700
+		line-height: 74px
+	&__subtext
+		color: white
+		font-family: $font
+		font-size: 20px
+		font-weight: 400
+		line-height: 28px
+	&__start
+		@extend %button
+	&__learn
+		@extend %button
+		background-color: #343434
+	&__profit
+		@extend .icon-header_profit
+		color: white
+		font-family: $font
+		font-size: 12px
+		font-weight: 700
+		line-height: 28px
+		padding-right: 10px
+		position: absolute
+		right: 0
+		top: 30%
+	&__chart
+		background-size: cover
+		background-image: url("../img/header_chart.png")
+		width: 100%
+		min-height: 895px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		z-index: -1
+
+
+.service
+	&__header
+		color: #343434
+		font-family: $font
+		font-size: 24px
+		font-weight: 700
+		line-height: 28px
+		text-transform: uppercase
+	&__subtext
+		color: #adadad
+		font-family: $font
+		font-size: 16px
+		font-weight: 400
+		line-height: 24px
+
+.tile
+	&__icon
+
+	&__heading
+		color: #343434
+		font-family: $font
+		font-size: 16px
+		font-weight: 700
+		line-height: 24px
+	&__red
+		@extend %red
+	&__text
+		color: #aeaeae
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+
+
+.footer
+	min-height: 100px
+	background-color: #343434
+	&__wrapper
+		@extend %wrapper
+	&__copyright
+		color: white
+		font-family: Verdana
+		font-size: 12px
+		font-weight: 700
+		line-height: 20px
+		text-transform: uppercase
