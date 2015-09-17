@@ -1,0 +1,30 @@
+.footer
+	min-height: 100px
+	background-color: #343434
+	&__wrapper
+		@extend %wrapper
+		padding-top: 40px
+	&__copyright
+		color: white
+		font-family: $font
+		font-size: 12px
+		font-weight: 700
+		line-height: 20px
+		text-transform: uppercase
+		float: left
+.footer__social
+	float: right
+	a
+		display: block
+		float: left
+		height: 20px
+		margin-right: 15px
+		padding-right: 15px
+		border-right: 1px solid red
+		&:last-child
+			border-right: 1px solid transparent
+	.social__icon
+			@each $s in linkedin,facebook,twitter,youtube
+				&--#{$s}
+					+s($s)
+					vertical-align: middle

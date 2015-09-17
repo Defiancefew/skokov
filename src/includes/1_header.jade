@@ -1,3 +1,7 @@
+mixin nav(name)
+	li
+		a.header__nav-link(href="#")= name
+
 header.header
 	.header__wrapper
 		.header__topline
@@ -6,17 +10,11 @@ header.header
 					img(src="./img/logotype.svg" alt="Logotype").header__logo-image
 			nav.header__nav
 				ul.header__list
-					li
-						a.header__nav-link(href="#") Home
-					li
-						a.header__nav-link(href="#") Services
-					li
-						a.header__nav-link(href="#") About us
-					li
-						a.header__nav-link(href="#") News
-					li
-						a.header__nav-link(href="#") Contact
-
+					+nav("Home")
+					+nav("Services")
+					+nav("About us")
+					+nav("News")
+					+nav("Contact")
 		.header__jumbotron
 			h1.header__heading Global management consulting agency
 			p.header__subtext Growth doesn't always go the way you expect. Our strategy consultants can help you climb.

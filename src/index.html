@@ -13,7 +13,6 @@
     <!--bower:css-->
     <!--endbower-->
     <!--endbuild-->
-    <link rel="stylesheet" href="css/header.min.css">
     <style>
       /*
  Insert your header styles here
@@ -264,7 +263,7 @@
         <div class="news__tiles">
           <div class="news__tile-line">
             <div class="news__tile-image--big"><img src="./img/news_1.jpg"></div>
-            <div class="news__text-tile">
+            <div class="news__text-tile--first">
               <div class="news__text-heading">Why financial institutions need a new IT model</div>
               <div class="news__text-red"></div>
               <div class="news__text">Why old IT models are unlikely to deliver the competitive edge that banks, insurers and wealth management firms need from technology</div>
@@ -273,14 +272,14 @@
             <div class="news__tile-image--small"><img src="./img/news_2.jpg"></div>
           </div>
           <div class="news__tile-line">
-            <div class="news__text-tile">
+            <div class="news__text-tile--second">
               <div class="news__text-heading">Reimagining IT for an omnichannel world</div>
               <div class="news__text-red"></div>
               <div class="news__text">The technology that powers retail is evolving rapidly. Retailers and their IT groups will have to rise to stay ahead.</div>
               <div class="news__text-date">08.20.2014</div>
             </div>
             <div class="news__tile-image--big"><img src="./img/news_3.jpg"></div>
-            <div class="news__text-tile">
+            <div class="news__text-tile--third">
               <div class="news__text-heading">Making the most of generation assets in turbulent times</div>
               <div class="news__text-red"></div>
               <div class="news__text">A thorough review of a power generation portfolio informs decisions about how to reduce costs, raise revenues and make strategic plans.</div>
@@ -341,6 +340,7 @@
     </script>
     <!--build:js js/vendor.min.js-->
     <!--bower:js-->
+    <script src="lib/angular/angular.js"></script>
     <!--endbower-->
     <!--endbuild-->
     <!-- build:js js/app.min.js-->

@@ -1,0 +1,66 @@
+.news
+	min-height: 930px
+	padding: 80px 0 60px 0
+	&__wrapper
+		@extend %wrapper
+		+clearfix
+	&__heading
+		@extend %heading
+		text-align: center
+	&__subtext
+		@extend %subtext
+		text-align: center
+		max-width: 80%
+		margin: 35px auto 80px auto
+	&__text-tile--first
+		@extend %text-tile
+		&:before
+			+arr(25,40, #343434, l)
+			content: ""
+			position: absolute
+			left: -25px
+	&__text-tile--second
+		@extend %text-tile
+		&:before
+			+arr(25,40, #343434, r)
+			content: ""
+			position: absolute
+			right: -25px
+	&__text-tile--third
+		@extend %text-tile
+		&:before
+			+arr(40,25, #343434, t)
+			content: ""
+			position: absolute
+			top: -25px
+			right: 25px
+	&__text-heading
+		@extend %red-heading
+		line-height: 1.2
+	&__text-red
+		@extend %red
+		margin: 15px 0 15px 0
+	&__text
+		color: white
+		font-family: Verdana
+		font-size: 12px
+		font-weight: 400
+		line-height: 20px
+	&__text-date
+		color: #fe504f
+		font-family: $font
+		font-size: 12px
+		font-style: italic
+		line-height: 20px
+		position: absolute
+		bottom: 25px
+		right: 25px
+	&__tile-image
+		&--big
+			max-width: 50%
+			float: left
+			height: 300px
+		&--small
+			max-width: 25%
+			float: left
+			height: 300px

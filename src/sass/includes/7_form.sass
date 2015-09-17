@@ -1,0 +1,101 @@
+.form
+	background: url("../img/contacts2_bg.jpg")
+	min-height: 715px
+	position: relative
+	z-index: -1
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,0.8)
+		z-index: -1
+	&__wrapper
+		@extend %wrapper
+		padding-top: 100px
+	&__subscribe
+		float: left
+		width: 50%
+	.subscribe__heading
+		color: #fe504f
+		font-family: $font
+		font-size: 32px
+		font-weight: 700
+		line-height: 32px
+		text-transform: uppercase
+		margin-bottom: 40px
+	.subscribe__icon
+		@each $s in map,phone,mail
+			&--#{$s}
+				+s($s)
+				vertical-align: middle
+				margin-right: 15px
+				margin-bottom: 15px
+	.subscribe__tile
+		color: white
+		font-family: $font
+		font-size: 12px
+		font-weight: 700
+		line-height: 20px
+		text-transform: uppercase
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		top: -7px
+	.subscribe__red
+		@extend %red
+		margin-bottom: 40px
+	&__heading
+		@extend .subscribe__heading
+		margin-bottom: 15px
+	&__red
+		@extend %red
+		margin-bottom: 20px
+	&__text
+		margin-bottom: 40px
+		color: white
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		line-height: 20px
+	&__form
+		float: right
+		position: relative
+	input
+		width: 445px
+		height: 45px
+		text-indent: 15px
+		padding-right: 15px
+		border: 1px solid #aeaeae
+		background: transparent
+		display: block
+		color: #afafaf
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		margin-bottom: 15px
+		+placeholder
+			color: #afafaf
+			font-family: $font
+			font-size: 14px
+			font-weight: 400
+	textarea
+		width: 445px
+		height: 190px
+		border: 1px solid #aeaeae
+		background: transparent
+		color: #afafaf
+		font-family: $font
+		font-size: 14px
+		font-weight: 400
+		text-indent: 15px
+		padding-top: 10px
+	&__submit
+		@extend %button
+		line-height: 40px
+		display: block
+		position: absolute
+		right: 0
+		margin-top: 20px

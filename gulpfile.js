@@ -112,7 +112,7 @@ gulp.task("rename", function(){
 gulp.task("watch", function(){
   gulp.watch("src/**/*.jade", ["jade"]);
   gulp.watch("bower.json", ["wiredep"]);
-  gulp.watch("src/sass/*.*", ["sass"]);
+  gulp.watch("src/sass/**/*.*", ["sass"]);
   gulp.watch(["src/js/*.*","!./src/js/app.js"], ["browserify"]).on("change", browserSync.reload);
   gulp.watch("src/img/sprites", ["sprite"]);
 });

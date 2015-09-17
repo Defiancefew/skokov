@@ -1,0 +1,31 @@
+.contact
+	background-image: url("../img/contacts_bg.jpg")
+	background-size: cover
+	min-height: 400px
+	position: relative
+	z-index: -1
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,0.8)
+		z-index: -1
+	&__wrapper
+		+ca
+		width: 80%
+	&__heading
+		color: white
+		font-family: $font
+		font-size: 34px
+		font-weight: 700
+		line-height: 58px
+		text-transform: uppercase
+		text-align: center
+		margin-bottom: 40px
+	&__button
+		@extend %button
+		margin: 0 auto
+		display: block
