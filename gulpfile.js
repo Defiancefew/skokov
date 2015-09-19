@@ -56,7 +56,7 @@ gulp.task("browsersync", ["jade", "sass"], function() {
 // JADE
 
 gulp.task("jade", function() {
-  return gulp.src("src/*.jade")
+  return gulp.src("src/tmp/index.jade")
     .pipe(plugins.plumber({errorHandler: plugins.notify.onError(error)}))
     .pipe(plugins.jade())
     .pipe(plugins.prettify({indent_size: 2}))
@@ -103,6 +103,9 @@ gulp.task("rename", function(){
   .pipe(plugins.plumber({errorHandler: plugins.notify.onError(error)}))
   .pipe(plugins.rename("sprites.scss"))
   .pipe(gulp.dest("src/sass/vendor"));
+  del.sync(["src/sass/vendor/sprites.css"], function (err, paths) {
+    console.log("Deleted files/folders:\n", paths.join("\n"));
+  });
 });
 
 // WATCH

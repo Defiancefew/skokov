@@ -27,6 +27,18 @@
   border: 2px solid transparent
   &:hover
     border: 2px solid #fe504f
+  +m(1100)
+    max-width: 33%
+  +m(740)
+    max-width: 50%
+  +m(550)
+    max-width: 100%
+    padding: 0 20%
+    margin: 0 auto
+    float: none
+  +m(450)
+    padding: 0 10px
+
   &__icon
     @each $s in perfomance,customer,technology,potential,strategy,equity,digital,results
       &--#{$s}

@@ -16,6 +16,8 @@
   &__wrapper
     +ca
     width: 80%
+    +m(768)
+      width: 100%
   &__heading
     color: white
     font-family: $font
@@ -25,6 +27,13 @@
     text-transform: uppercase
     text-align: center
     margin-bottom: 40px
+    +m(768)
+      font-size: 28px
+    +m(512)
+      font-size: 20px
+      line-height: 30px
+    +m(380)
+      font-size: 16px
   &__button
     @extend %button
     margin: 0 auto

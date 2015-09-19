@@ -12,6 +12,9 @@
     max-width: 60%
     text-align: center
     margin: 35px auto 0 auto
+    +m(750)
+      max-width: 100%
+      padding: 0 10px 0 10px
   &__red-heading
     @extend %red-heading
   &__red
@@ -23,15 +26,35 @@
     font-size: 14px
     font-weight: 400
     line-height: 24px
+
   &__wrapper
     +clearfix
   &__what
     float: left
     width: 50%
     padding-right: 60px
+    padding-left: 10px
+    +m(800)
+      width: 80%
+      margin: 0 auto
+      float: none
+      padding: 0 10px 0 10px
   &__clients
     float: right
     width: 50%
+    +m(800)
+      width: 80%
+      margin: 0 auto
+      float: none
+      padding: 0 10px 0 10px
+  &__clients-tiles
+    +m(800)
+      width: 600px
+    +m(640)
+      width: 375px
+      margin: 0 auto
+    +m(480)
+      width: 185px
   &__clients-tile
     @each $s in oracle,sony,sandisk,mcafee,netflix,sap
       &--#{$s}
@@ -40,6 +63,20 @@
         &:hover
           background-color: red
           opacity: 0.8
+  &__team-tiles
+    +cf
+    margin: 0 auto
+  &__wrap
+    width: 100%
+    margin: 0 auto
+    +m(1220)
+      width: 804px
+    +m(860)
+      width: 600px
+    +m(640)
+      width: 400px
+    +m(480)
+      width: 200px
   &__team
     width: 100%
     display: block
@@ -91,3 +128,4 @@
       +s(team_#{$s})
       float: left
       position: relative
+      display: inline-block

@@ -62,6 +62,10 @@ $font: "Verdana", sans-serif
   background-repeat: no-repeat, no-repeat, no-repeat
   background-position: center 200px, bottom center, bottom center
   padding-top: 70px
+  +m(920)
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("../img/header_bg.jpg")
+    background-repeat: no-repeat, no-repeat, no-repeat
+    background-size: cover,cover,cover
   &__wrapper
     @extend %wrapper
   &__topline
@@ -76,9 +80,13 @@ $font: "Verdana", sans-serif
     display: inline-block
     vertical-align: middle
     margin-bottom: 180px
+    +m(750)
+      float: none
   li
     float: left
     margin-right: 50px
+    +m(750)
+      display: block
   &__nav-link
     text-decoration: none
     color: white
@@ -94,6 +102,8 @@ $font: "Verdana", sans-serif
   &__jumbotron
     display: block
     width: 60%
+    +m(700)
+      width: 100%
   &__heading
     color: white
     font-family: $font
@@ -101,6 +111,9 @@ $font: "Verdana", sans-serif
     font-weight: 700
     line-height: 74px
     margin-bottom: 45px
+    +m(480)
+      font-size: 50px
+      text-align: center
   &__subtext
     color: white
     font-family: $font
@@ -138,3 +151,5 @@ $font: "Verdana", sans-serif
     transition: 0.25s
     &:hover
       text-decoration: underline
+    +m(600)
+      display: none
