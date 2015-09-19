@@ -1,49 +1,55 @@
 .service
-	min-height: 725px
-	&__wrapper
-		@extend %wrapper
-	&__heading
-		@extend %heading
-		text-align: center
-		margin-top: 50px
-	&__subtext
-		margin-top: 35px
-		@extend %subtext
-		text-align: center
-		max-width: 80%
-		margin: 35px auto 0 auto
-	&__tiles
-		margin-top: 70px
-		+clearfix
+  min-height: 725px
+  &__wrapper
+    @extend %wrapper
+  &__heading
+    @extend %heading
+    text-align: center
+    margin-top: 50px
+  &__subtext
+    margin-top: 35px
+    @extend %subtext
+    text-align: center
+    max-width: 80%
+    margin: 35px auto 0 auto
+  &__tiles
+    margin: 70px 0 70px 0
+    +clearfix
 
 .tile
-	max-width: 25%
-	min-height: 250px
-	display: block
-	float: left
-	text-align: center
-	padding: 0 2%
-	&__icon
-		@each $s in perfomance,customer,technology,potential,strategy,equity,digital,results
-			&--#{$s}
-				+s($s)
-				text-align: center
-				margin-bottom: 20px
-	margin-bottom: 20px
-	&__heading
-		color: #343434
-		width: 70%
-		margin: 0 auto
-		font-family: $font
-		font-size: 16px
-		font-weight: 700
-		line-height: 24px
-	&__red
-		@extend %red
-		margin: 10px auto 20px auto
-	&__text
-		color: #aeaeae
-		font-family: $font
-		font-size: 14px
-		font-weight: 400
-		line-height: 24px
+  max-width: 25%
+  min-height: 350px
+  display: block
+  float: left
+  text-align: center
+  padding: 0 2%
+  transition: 0.25s
+  border: 2px solid transparent
+  &:hover
+    border: 2px solid #fe504f
+  &__icon
+    @each $s in perfomance,customer,technology,potential,strategy,equity,digital,results
+      &--#{$s}
+        +s($s)
+        text-align: center
+        margin-bottom: 20px
+        margin-top: 40px
+  margin-bottom: 20px
+  &__heading
+    color: #343434
+    width: 70%
+    margin: 0 auto
+    font-family: $font
+    font-size: 16px
+    font-weight: 700
+    line-height: 24px
+  &__red
+    @extend %red
+    margin: 10px auto 20px auto
+  &__text
+    color: #aeaeae
+    font-family: $font
+    font-size: 14px
+    font-weight: 400
+    line-height: 24px
+    margin-bottom: 40px

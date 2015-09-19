@@ -70,9 +70,7 @@ gulp.task("sass", function () {
   gulp.src("src/sass/*.*")
     .pipe(plugins.plumber({errorHandler: plugins.notify.onError(error)}))
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass({
-    includePaths: require("node-bourbon").includePaths
-  	}).on("error", plugins.sass.logError))
+    .pipe(plugins.sass())
 	  .pipe(plugins.rename({suffix: ".min"}))
 	  .pipe(plugins.autoprefixer({
 	    browsers: ["last 15 versions"],
@@ -196,5 +194,5 @@ gulp.task("sprite", function(){
 // DISTRIBUTION
 
 gulp.task("dist", function(){
-  runSequence("clean", "useref", "imagemin", "fonts", "copy");
+  runSequence("clean", "useref", "cmq" , "imagemin", "fonts", "copy");
 });

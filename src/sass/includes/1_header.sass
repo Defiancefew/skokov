@@ -1,54 +1,140 @@
 $font: "Verdana", sans-serif
 
 %wrapper
-	max-width: 1200px
-	margin: 0 auto
+  max-width: 1200px
+  margin: 0 auto
 
 %button
-	padding: 0 40px
-	border-radius: 50px
-	background-color: #fe504f
-	color: white
-	font-family: $font
-	font-size: 20px
-	font-weight: normal
-	line-height: 60px
+  padding: 0 40px
+  border-radius: 50px
+  background-color: #fe504f
+  color: white
+  font-family: $font
+  font-size: 20px
+  font-weight: normal
+  line-height: 60px
+  transition: 0.2s
+  border: 2px solid transparent
 
 %red
-	width: 61px
-	height: 3px
-	background-color: #fe504f
+  width: 61px
+  height: 3px
+  background-color: #fe504f
 
 %heading
-	color: #343434
-	font-family: $font
-	font-size: 24px
-	font-weight: 700
-	line-height: 28px
-	text-transform: uppercase
+  color: #343434
+  font-family: $font
+  font-size: 24px
+  font-weight: 700
+  line-height: 28px
+  text-transform: uppercase
 
 %subtext
-	color: #adadad
-	font-family: $font
-	font-size: 16px
-	font-weight: 400
-	line-height: 24px
+  color: #adadad
+  font-family: $font
+  font-size: 16px
+  font-weight: 400
+  line-height: 24px
 
 %red-heading
-	color: #fe504f
-	font-family: $font
-	font-size: 20px
-	font-weight: 700
-	line-height: 74px
-	text-transform: uppercase
+  color: #fe504f
+  font-family: $font
+  font-size: 20px
+  font-weight: 700
+  line-height: 74px
+  text-transform: uppercase
 
 %text-tile
-	background-color: #343434
-	padding: 30px
-	display: block
-	position: relative
-	max-width: 25%
-	float: left
-	height: 300px
-	position: relative
+  background-color: #343434
+  padding: 30px
+  display: block
+  position: relative
+  max-width: 25%
+  float: left
+  height: 300px
+  position: relative
 
+.header
+  height: 100vh
+  background: url("../img/header_chart.png"),linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("../img/header_bg.jpg")
+  position: relative
+  background-size: cover,cover,cover
+  background-repeat: no-repeat, no-repeat, no-repeat
+  background-position: center 200px, bottom center, bottom center
+  padding-top: 70px
+  &__wrapper
+    @extend %wrapper
+  &__topline
+    display: block
+    +clearfix
+  &__logo
+    float: left
+    display: inline-block
+    vertical-align: middle
+  &__nav
+    float: right
+    display: inline-block
+    vertical-align: middle
+    margin-bottom: 180px
+  li
+    float: left
+    margin-right: 50px
+  &__nav-link
+    text-decoration: none
+    color: white
+    font-family: $font
+    font-size: 14px
+    font-weight: 400
+    line-height: 32px
+    text-transform: uppercase
+    display: block
+    border-bottom: 2px solid transparent
+    &:hover
+      border-bottom: 2px solid red
+  &__jumbotron
+    display: block
+    width: 60%
+  &__heading
+    color: white
+    font-family: $font
+    font-size: 60px
+    font-weight: 700
+    line-height: 74px
+    margin-bottom: 45px
+  &__subtext
+    color: white
+    font-family: $font
+    font-size: 20px
+    font-weight: 400
+    line-height: 28px
+    margin-bottom: 45px
+  &__start
+    @extend %button
+    margin-right: 30px
+    transition: 0.25s
+    &:hover
+      background-color: transparent
+      border: 2px solid #fe504f
+      color: #fe504f
+  &__learn
+    @extend %button
+    background-color: #343434
+    &:hover
+      background-color: transparent
+      border: 2px solid #343434
+      color: white
+  &__profit
+    +s(header_profit)
+    color: white
+    font-family: $font
+    font-size: 12px
+    font-weight: 700
+    line-height: 28px
+    padding-right: 10px
+    position: absolute
+    right: 0
+    top: 37%
+    background-color: transparent
+    transition: 0.25s
+    &:hover
+      text-decoration: underline

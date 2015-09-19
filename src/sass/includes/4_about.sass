@@ -1,55 +1,93 @@
 .about
-	padding-top: 80px
-	padding-bottom: 80px
-	+clearfix
-	&__wrapper
-		@extend %wrapper
-	&__heading
-		@extend %heading
-		text-align: center
-	&__subtext
-		@extend %subtext
-		max-width: 60%
-		text-align: center
-		margin: 35px auto 0 auto
-	&__red-heading
-		@extend %red-heading
-	&__red
-		@extend %red
-		margin-bottom: 30px
-	&__text
-		color: #343434
-		font-family: $font
-		font-size: 14px
-		font-weight: 400
-		line-height: 24px
-	&__wrapper
-		+clearfix
-	&__team-link
-		display: block
-		width: 100%
-		height: 100%
-		transition: 0.25s
-		&:hover
-			background-color: red
-			opacity: 0.7
-	&__what
-		float: left
-		width: 50%
-		padding-right: 60px
-	&__clients
-		float: right
-		width: 50%
-	&__clients-tile
-		@each $s in oracle,sony,sandisk,mcafee,netflix,sap
-			&--#{$s}
-				+s($s)
-			position: relative
-	&__team
-		width: 100%
-		display: block
-	@each $s in 1,2,3,4,5,6,7,8,9,10,11,12
-		&__team-tile--#{$s}
-			+s(team_#{$s})
-			float: left
-			position: relative
+  padding-top: 80px
+  padding-bottom: 80px
+  +clearfix
+  &__wrapper
+    @extend %wrapper
+  &__heading
+    @extend %heading
+    text-align: center
+  &__subtext
+    @extend %subtext
+    max-width: 60%
+    text-align: center
+    margin: 35px auto 0 auto
+  &__red-heading
+    @extend %red-heading
+  &__red
+    @extend %red
+    margin-bottom: 30px
+  &__text
+    color: #343434
+    font-family: $font
+    font-size: 14px
+    font-weight: 400
+    line-height: 24px
+  &__wrapper
+    +clearfix
+  &__what
+    float: left
+    width: 50%
+    padding-right: 60px
+  &__clients
+    float: right
+    width: 50%
+  &__clients-tile
+    @each $s in oracle,sony,sandisk,mcafee,netflix,sap
+      &--#{$s}
+        +s($s)
+        position: relative
+        &:hover
+          background-color: red
+          opacity: 0.8
+  &__team
+    width: 100%
+    display: block
+  &__team-info
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    padding:  20px
+    opacity: 0
+    transition: 0.25s
+    z-index: 9999
+    &:hover
+      background-color: red
+      opacity: 0.8
+  &__team-link
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    transition: 0.25s
+  &__team-name
+    color: white
+    font-family: $font
+    font-size: 32px
+    font-weight: 700
+    line-height: 40px
+  &__team-position
+    color: white
+    font-family: $font
+    font-size: 12px
+    font-weight: 700
+    line-height: 24px
+    position: absolute
+    bottom: 40px
+  &__team-desc
+    color: white
+    font-family: $font
+    font-size: 12px
+    font-weight: 400
+    line-height: 24px
+    position: absolute
+    bottom: 20px
+  @each $s in 1,2,3,4,5,6,7,8,9,10,11,12
+    &__team-tile--#{$s}
+      +s(team_#{$s})
+      float: left
+      position: relative

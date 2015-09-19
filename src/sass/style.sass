@@ -2,88 +2,14 @@
 @import "vendor/mixins"
 @import "vendor/default"
 @import "vendor/sprites"
-// @import "vendor/bootstrap"
 @import "../lib/bourbon/app/assets/stylesheets/bourbon"
-@import "includes/1_header"
-@import "includes/2_services"
-@import "includes/3_contact"
-@import "includes/4_about"
-@import "includes/5_blend"
-@import "includes/6_news"
-@import "includes/7_form"
-@import "includes/8_footer"
+@import "./includes/1_header"
+@import "./includes/2_services"
+@import "./includes/3_contact"
+@import "./includes/4_about"
+@import "./includes/5_blend"
+@import "./includes/6_news"
+@import "./includes/7_form"
+@import "./includes/8_footer"
 
 
-
-.header
-	height: 100vh	
-	background: url("../img/header_chart.png"),linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("../img/header_bg.jpg")
-	position: relative
-	background-size: cover,cover,cover
-	background-repeat: no-repeat, no-repeat, no-repeat
-	background-position: center 200px, bottom center, bottom center
-	padding-top: 70px
-	&__wrapper
-		@extend %wrapper
-	&__topline
-		display: block
-		+clearfix
-	&__logo
-		float: left
-		display: inline-block
-		vertical-align: middle
-	&__nav
-		float: right
-		display: inline-block
-		vertical-align: middle
-		margin-bottom: 180px
-	li
-		float: left
-		margin-right: 50px
-	&__nav-link
-		text-decoration: none
-		color: white
-		font-family: $font
-		font-size: 14px
-		font-weight: 400
-		line-height: 32px
-		text-transform: uppercase
-		display: block
-		border-bottom: 2px solid transparent
-		&:hover
-			border-bottom: 2px solid red
-	&__jumbotron
-		display: block
-		width: 60%
-	&__heading
-		color: white
-		font-family: $font
-		font-size: 60px
-		font-weight: 700
-		line-height: 74px
-		margin-bottom: 45px
-	&__subtext
-		color: white
-		font-family: $font
-		font-size: 20px
-		font-weight: 400
-		line-height: 28px
-		margin-bottom: 45px
-	&__start
-		@extend %button
-		margin-right: 30px
-	&__learn
-		@extend %button
-		background-color: #343434
-	&__profit
-		+s(header_profit)
-		color: white
-		font-family: $font
-		font-size: 12px
-		font-weight: 700
-		line-height: 28px
-		padding-right: 10px
-		position: absolute
-		right: 0
-		top: 37%
-		background-color: transparent
